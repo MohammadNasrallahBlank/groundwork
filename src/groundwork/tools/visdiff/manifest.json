@@ -1,0 +1,59 @@
+{
+  "name": "visdiff",
+  "version": "0.1.0",
+  "purpose": "Visual regression verdicts with measured evidence: deterministic browser capture diffed against platform-keyed baselines (SSIM + per-pixel), changed regions with bounding boxes, and a composite diff image.",
+  "why": "Pixel-exact, repeatable diff of a rendered page - catches sub-visual changes and gives a pass/fail gate.",
+  "reach_for_me_when": [
+    "you changed UI code and are about to claim the page still looks right",
+    "you need pixel-measured evidence of what changed on a page, not a screenshot gist",
+    "you want a repeatable pass/fail gate on a page's appearance"
+  ],
+  "avoid_when": [
+    "you just need to eyeball whether two static HTML/CSS files differ - read them directly, you compare markup fine"
+  ],
+  "commands": [
+    {
+      "name": "baseline",
+      "summary": "Capture a page and store it as the baseline for this platform",
+      "args": "--name <id> --url <url> [--root <dir>] [--viewport WxH] [--full-page] [--mask <css>]... [--timeout <sec>]"
+    },
+    {
+      "name": "check",
+      "summary": "Capture and diff against the stored baseline; exit 1 on regression, 4 if no baseline",
+      "args": "--name <id> --url <url> [--root <dir>] [--viewport WxH] [--full-page] [--mask <css>]... [--timeout <sec>] [--min-ssim <f>] [--max-diff-ratio <f>]"
+    },
+    {
+      "name": "approve",
+      "summary": "Promote the last check's capture to the new baseline",
+      "args": "--name <id> [--root <dir>]"
+    },
+    {
+      "name": "list",
+      "summary": "List stored baselines and their platform keys",
+      "args": ""
+    },
+    {
+      "name": "install-browser",
+      "summary": "Explicitly download the chromium binary (the only download path)",
+      "args": ""
+    },
+    {
+      "name": "self-test",
+      "summary": "Prove the tool works (browser-free)",
+      "args": ""
+    }
+  ],
+  "danger_level": "writes_workspace",
+  "cache": "off",
+  "deps": {
+    "python": [
+      "playwright",
+      "PIL",
+      "numpy",
+      "skimage",
+      "pixelmatch"
+    ],
+    "system": [],
+    "optional": []
+  }
+}

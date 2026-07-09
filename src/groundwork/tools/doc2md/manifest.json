@@ -1,0 +1,37 @@
+{
+  "name": "doc2md",
+  "version": "0.1.0",
+  "purpose": "Convert a PDF or document into clean Markdown locally, so you feed the model compact TEXT instead of an expensive PDF (whose pages the model would otherwise ingest as images). Handles multi-page PDFs and e-book formats; supports extracting only specific pages or only the Markdown blocks matching a pattern, and reports the size/token saving.",
+  "why": "Extract the text locally and hand back only what's needed, with an exact before/after size report. On a text-based PDF the measured saving is modest (~20-25% fewer tokens, since the model already extracts text-PDF text fairly cheaply); the large savings apply to scanned / image-only documents that the model would otherwise ingest as expensive images (this extractor reads the text layer, so scanned-doc OCR is a planned extension, not a current claim).",
+  "reach_for_me_when": [
+    "the user points you at a PDF or document and you need the words/data inside it",
+    "a document is many pages and reading it directly would burn the context budget",
+    "you need to quote, search, or reason over a document's TEXT rather than its visual layout",
+    "you only need part of a large document (use --pages or --grep to send just that slice)"
+  ],
+  "avoid_when": [
+    "the document's visual appearance is the point - a figure, chart, diagram, scanned form layout, or photo - read the page image directly, because you interpret images better than any text extractor",
+    "the file is small and reading it directly is already cheap and lossless"
+  ],
+  "commands": [
+    {
+      "name": "convert",
+      "summary": "Extract a document to Markdown (+ token/size report); optional page or pattern slice",
+      "args": "--file <path> [--pages 1-3,7] [--grep <regex>] [--max-chars <n>] [--no-cache]"
+    },
+    {
+      "name": "self-test",
+      "summary": "Build a PDF in memory, convert it, prove the text round-trips",
+      "args": ""
+    }
+  ],
+  "danger_level": "read_only",
+  "cache": "content",
+  "deps": {
+    "python": [
+      "pymupdf"
+    ],
+    "system": [],
+    "optional": []
+  }
+}

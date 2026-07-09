@@ -1,0 +1,24 @@
+{
+  "name": "ledger",
+  "version": "0.1.0",
+  "purpose": "The calibration instrument: capture claim/outcome pairs ('Claude claimed the tests would pass - did they?'), compute per-project reliability tables and Brier scores over confidence buckets, and render one honest report. Also the proof-of-value engine: cache-hit rates, calls-avoided, and verification catches - published methodology, opt-in, local-only.",
+  "reach_for_me_when": [
+    "you want to measure whether your confidence is calibrated, not just feel calibrated",
+    "you need a Brier score and reliability curve for the predictions made in this project",
+    "you want an honest, auditable proof-of-value report (cache hits, calls avoided, catches)"
+  ],
+  "commands": [
+    {"name": "claim", "summary": "Record an open prediction with a confidence in [0,1]",
+     "args": "--statement <s> --confidence <c> [--source <s>] [--tags <t>] [--at <iso>] [--root <dir>]"},
+    {"name": "resolve", "summary": "Set a claim's outcome once (true|false)",
+     "args": "--id <n> --outcome true|false [--at <iso>] [--root <dir>]"},
+    {"name": "record", "summary": "Record a tool run for the proof-of-value counters",
+     "args": "--tool <t> [--cache hit|miss|off] [--avoided] [--caught] [--at <iso>] [--root <dir>]"},
+    {"name": "report", "summary": "Brier + calibration table + efficiency counters, with methodology",
+     "args": "[--bins <n>] [--root <dir>]"},
+    {"name": "self-test", "summary": "Prove the calibration math works", "args": ""}
+  ],
+  "danger_level": "writes_workspace",
+  "cache": "off",
+  "deps": {"python": [], "system": [], "optional": []}
+}

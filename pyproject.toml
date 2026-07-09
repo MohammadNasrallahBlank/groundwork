@@ -1,0 +1,47 @@
+[project]
+name = "groundwork"
+version = "0.1.0"
+description = "Deterministic local tool ecosystem for Claude Code"
+requires-python = ">=3.11"
+dependencies = [
+    "platformdirs>=4.2",
+    "griffe>=2.1,<3",
+    "tree-sitter>=0.23",
+    "tree-sitter-language-pack>=0.9",
+    "playwright>=1.45",
+    "pillow>=10",
+    "numpy>=1.26",
+    "scikit-image>=0.24",
+    "pixelmatch>=0.3",
+    "rapidocr-onnxruntime>=1.3",
+    "opencv-python>=4.8",
+    "ast-grep-py>=0.39",
+    "libcst>=1.5",
+    "pyyaml>=6",
+    "fastembed>=0.7",
+    "sqlite-vec>=0.1.6",
+    "duckdb>=1.1",
+    "coverage>=7.4",
+    "hypothesis>=6.100",
+    "pymupdf>=1.24",
+]
+
+[dependency-groups]
+dev = ["pytest>=8", "ruff>=0.6"]
+
+[project.scripts]
+groundwork = "groundwork.dispatcher:main"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.ruff]
+line-length = 100
+exclude = ["tests/fixtures", "eval/tasks"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+# Repo-local temp: hermetic across machines, immune to broken system temp ACLs.
+addopts = "--basetemp=.tmp"
+norecursedirs = ["tests/fixtures", ".hypothesis", ".git", ".tmp", ".venv"]

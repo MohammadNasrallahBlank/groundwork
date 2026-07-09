@@ -1,0 +1,46 @@
+{
+  "description": "Groundwork automatic hooks",
+  "hooks": {
+    "SessionStart": [
+      {
+        "matcher": "startup|resume|clear",
+        "hooks": [
+          {"type": "command",
+           "command": "groundwork cartographer hook --event session-start --budget 1500",
+           "timeout": 30}
+        ]
+      }
+    ],
+    "PostCompact": [
+      {
+        "matcher": "auto|manual",
+        "hooks": [
+          {"type": "command",
+           "command": "groundwork cartographer hook --event post-compact --budget 1500",
+           "timeout": 30}
+        ]
+      }
+    ],
+    "PreToolUse": [
+      {
+        "matcher": "Edit|Write",
+        "hooks": [
+          {"type": "command",
+           "command": "groundwork patchgate hook --event pre-tool-use",
+           "timeout": 10},
+          {"type": "command",
+           "command": "groundwork gates hook --event pre-tool-use",
+           "timeout": 10}
+        ]
+      },
+      {
+        "matcher": "Bash|PowerShell",
+        "hooks": [
+          {"type": "command",
+           "command": "groundwork gates hook --event pre-tool-use",
+           "timeout": 10}
+        ]
+      }
+    ]
+  }
+}

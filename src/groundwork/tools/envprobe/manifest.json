@@ -1,0 +1,22 @@
+{
+  "name": "envprobe",
+  "version": "0.1.0",
+  "purpose": "One-call environment snapshot: OS, runtime versions, lockfile hashes, env-var names only (values never appear); diff detects drift.",
+  "reach_for_me_when": [
+    "you are about to assume a toolchain or runtime version instead of checking it",
+    "behavior differs between machines or sessions and you suspect environment drift",
+    "you need to orient on a project's environment at session start"
+  ],
+  "commands": [
+    {"name": "snapshot", "summary": "Capture the environment and save it as the baseline",
+     "args": "[--root <dir>]"},
+    {"name": "diff", "summary": "Report drift versus the saved baseline (exit 4 if none)",
+     "args": "[--root <dir>]"},
+    {"name": "digest", "summary": "One-line environment summary (hook-ready)",
+     "args": "[--root <dir>]"},
+    {"name": "self-test", "summary": "Prove the tool works", "args": ""}
+  ],
+  "danger_level": "read_only",
+  "cache": "off",
+  "deps": {"python": [], "system": [], "optional": []}
+}

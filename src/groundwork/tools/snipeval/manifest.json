@@ -1,0 +1,35 @@
+{
+  "name": "snipeval",
+  "version": "0.1.0",
+  "purpose": "Run a snippet in the project's own interpreter (venv python / project node) with a timeout; capture stdout, stderr, return code, and a python trailing-expression repr as JSON.",
+  "why": "Runs the snippet in the project's real dependency versions and returns actual stdout/return-code - not a predicted output.",
+  "reach_for_me_when": [
+    "you are about to predict what a line of code returns instead of running it",
+    "you need to run code in the project's installed dependency versions, not from memory",
+    "you want a snippet's real stdout/stderr/return-code as a structured result"
+  ],
+  "avoid_when": [
+    "the snippet is trivial and its output is obvious by reading it"
+  ],
+  "commands": [
+    {
+      "name": "run",
+      "summary": "Execute a snippet and return captured output as JSON",
+      "args": "--lang <python|node> [--root <dir>] [--timeout <sec>] [--code <str>]"
+    },
+    {
+      "name": "self-test",
+      "summary": "Prove the tool works",
+      "args": ""
+    }
+  ],
+  "danger_level": "writes_repo",
+  "cache": "off",
+  "deps": {
+    "python": [],
+    "system": [],
+    "optional": [
+      "node"
+    ]
+  }
+}

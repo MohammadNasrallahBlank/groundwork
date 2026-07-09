@@ -1,0 +1,20 @@
+{
+  "name": "patchgate",
+  "version": "0.1.0",
+  "purpose": "Pre-write validation for edits and diffs: does the patch apply cleanly, and does every touched file still parse afterward (compile() for Python, json for JSON, tree-sitter for JS/TS/Java/Kotlin)? Ships an optional PreToolUse hook that denies syntax-breaking Edit/Write calls.",
+  "reach_for_me_when": [
+    "you are about to apply a patch and want to know it lands cleanly BEFORE touching the tree",
+    "you generated a diff and need machine confirmation the result still parses",
+    "you want broken edits denied automatically at the tool-call boundary"
+  ],
+  "commands": [
+    {"name": "check-diff", "summary": "Validate a unified diff: clean apply + post-image parse checks; exit 1 on failure",
+     "args": "[--diff <path>] [--root <dir>]  (diff from --diff or stdin)"},
+    {"name": "check-content", "summary": "Validate proposed file content by extension; exit 1 on failure",
+     "args": "--file <path> [--content-file <p>]  (content from file or stdin)"},
+    {"name": "self-test", "summary": "Prove the check ladder works", "args": ""}
+  ],
+  "danger_level": "read_only",
+  "cache": "off",
+  "deps": {"python": ["tree_sitter", "tree_sitter_language_pack"], "system": [], "optional": []}
+}

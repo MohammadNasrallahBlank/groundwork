@@ -1,0 +1,23 @@
+{
+  "name": "scratchdb",
+  "version": "0.1.0",
+  "purpose": "Named, disposable DuckDB analytical scratchpads over your data files: load CSV/Parquet/JSONL as live views (never copies), then run SQL across them and get JSON rows. Turns 'analyze these three exports together' into deterministic calls.",
+  "reach_for_me_when": [
+    "you need to analyze several data files together with SQL, not in your head",
+    "you are about to write a fragile one-off pandas snippet for a quick data question",
+    "you want a persistent named scratchpad to run follow-up queries against"
+  ],
+  "commands": [
+    {"name": "load", "summary": "Register a data file as a live view in a named pad",
+     "args": "--name <p> --file <f> [--as <view>]"},
+    {"name": "q", "summary": "Run SQL against a pad; JSON rows, row-capped",
+     "args": "--name <p> --sql <s> [--limit <n>]"},
+    {"name": "tables", "summary": "List views and tables in a pad", "args": "--name <p>"},
+    {"name": "drop", "summary": "Drop a whole pad, or one --view in it", "args": "--name <p> [--view <v>]"},
+    {"name": "list", "summary": "List all scratchpads", "args": ""},
+    {"name": "self-test", "summary": "Prove the tool works", "args": ""}
+  ],
+  "danger_level": "writes_workspace",
+  "cache": "off",
+  "deps": {"python": ["duckdb"], "system": [], "optional": []}
+}

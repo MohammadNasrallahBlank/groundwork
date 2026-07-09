@@ -1,0 +1,23 @@
+{
+  "name": "groundwork",
+  "owner": {
+    "name": "Mohammad Nasrallah",
+    "email": "moe@blankonline.io"
+  },
+  "description": "Groundwork — deterministic local tools for Claude Code: verified, cached, JSON-contract CLIs that replace model inference for mechanical work.",
+  "plugins": [
+    {
+      "name": "groundwork",
+      "source": "./",
+      "description": "23 verified, cached, JSON-contract CLIs (code map, semantic search, codemod, doc-to-markdown, visual diff, and more), wired as SessionStart/PreToolUse hooks and a discovery skill.",
+      "homepage": "https://github.com/MohammadNasrallahBlank/groundwork",
+      "repository": "https://github.com/MohammadNasrallahBlank/groundwork",
+      "keywords": [
+        "deterministic",
+        "verification",
+        "caching",
+        "hooks"
+      ]
+    }
+  ]
+}

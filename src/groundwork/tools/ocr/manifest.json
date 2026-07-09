@@ -1,0 +1,24 @@
+{
+  "name": "ocr",
+  "version": "0.1.0",
+  "purpose": "Deterministic text-from-pixels: local OCR (bundled ONNX models, tesseract fallback) returning text, confidence, and bounding boxes as JSON, so you get an image's TEXT without sending the image to the model. A --region crop speaks visdiff's bbox shape.",
+  "why": "Extract the words locally and send only the text: an image ingested by the model costs far more tokens than its OCR'd text, and OCR reads exact strings/numbers more reliably than eyeballing pixels. But this is ONLY about text - it throws away everything visual.",
+  "reach_for_me_when": [
+    "you need the exact text/numbers from a screenshot, scan, or photo and the visual layout does not matter",
+    "a visdiff region changed and you need to know what the changed area now says",
+    "you need text WITH positions and confidences from an image, as structured data"
+  ],
+  "avoid_when": [
+    "the image's VISUAL content is what you need to understand - a chart, diagram, UI layout, photo, handwriting, or anything spatial - read the image directly, because you interpret images far better than an OCR string dump",
+    "you are not sure whether the text or the visual matters - default to reading the image yourself, then reach for OCR only if you specifically need exact characters"
+  ],
+  "commands": [
+    {"name": "read", "summary": "OCR an image (optionally one region) to text + boxes + confidence",
+     "args": "--image <path> [--region x0,y0,x1,y1] [--engine auto|rapidocr|tesseract] [--no-cache]"},
+    {"name": "models", "summary": "Report engine availability and the bundled ONNX models", "args": ""},
+    {"name": "self-test", "summary": "Prove the tool works (renders text, reads it back)", "args": ""}
+  ],
+  "danger_level": "read_only",
+  "cache": "content",
+  "deps": {"python": ["rapidocr_onnxruntime", "PIL", "numpy"], "system": [], "optional": ["tesseract"]}
+}

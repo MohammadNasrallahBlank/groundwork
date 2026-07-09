@@ -1,0 +1,20 @@
+{
+  "name": "depsurface",
+  "version": "0.1.0",
+  "purpose": "Extract the public API of a package actually installed in the project, version-stamped and cached.",
+  "reach_for_me_when": [
+    "you are about to call a third-party library API from memory",
+    "you need the exact signature a dependency exposes in this project's installed version",
+    "you need to see what changed in a dependency's API between two versions"
+  ],
+  "commands": [
+    {"name": "api", "summary": "Extract a package's public surface",
+     "args": "<package> [--root <dir>] [--site-packages <dir>] [--symbol <dotted>] [--no-cache]"},
+    {"name": "diff", "summary": "Diff two stored snapshots of a package",
+     "args": "<package> <version_a> <version_b>"},
+    {"name": "self-test", "summary": "Prove the tool works", "args": ""}
+  ],
+  "danger_level": "read_only",
+  "cache": "content",
+  "deps": {"python": ["griffe"], "system": [], "optional": []}
+}

@@ -1,0 +1,22 @@
+{
+  "name": "recordstore",
+  "version": "0.1.0",
+  "purpose": "Typed, queryable project records that prose memory can't hold: decisions (context/choice/status), measurements (a metric over time), and outcome events - in a project-local SQLite store with add/query/timeline. A COMPLEMENT to native memory, not a replacement.",
+  "reach_for_me_when": [
+    "you need to query decisions later ('all accepted API decisions since March'), not just recall prose",
+    "you are tracking a metric over time and want the series, not a vibe",
+    "you want outcome events recorded in a structured store (feeds the ledger)"
+  ],
+  "commands": [
+    {"name": "add", "summary": "Add a typed record: decision | measurement | event",
+     "args": "decision --subject <s> --choice <c> [--status <st>] [--rationale <r>] | measurement --metric <m> --value <v> [--unit <u>] | event --name <n> [--outcome <o>]  [--tags <t>] [--at <iso>] [--root <dir>]"},
+    {"name": "query", "summary": "Filter records (type/status/label/tag/date); newest first",
+     "args": "[--type <t>] [--status <s>] [--label-like <p>] [--tag <t>] [--since <iso>] [--until <iso>] [--limit <n>] [--root <dir>]"},
+    {"name": "timeline", "summary": "Records chronologically with condensed summaries",
+     "args": "[--type <t>] [--since <iso>] [--until <iso>] [--desc] [--limit <n>] [--root <dir>]"},
+    {"name": "self-test", "summary": "Prove the tool works", "args": ""}
+  ],
+  "danger_level": "writes_workspace",
+  "cache": "off",
+  "deps": {"python": [], "system": [], "optional": []}
+}

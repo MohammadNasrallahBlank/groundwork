@@ -1,0 +1,21 @@
+{
+  "name": "codemod",
+  "version": "0.1.0",
+  "purpose": "Repo-scale structural rewrites, safely: plan first (stored diffs + content hashes), apply only on a clean tree against an unchanged state, then auto-verify. Engines: ast-grep patterns, libcst presets, optional comby.",
+  "reach_for_me_when": [
+    "you are about to hand-edit the same call pattern across many files",
+    "you need a reviewable change plan (diffs, counts) before any file is touched",
+    "you want a mechanical rewrite chained straight into verify --changed-only"
+  ],
+  "commands": [
+    {"name": "plan", "summary": "Compute and store a change plan; never writes source files",
+     "args": "--pattern <p> --rewrite <r> --lang <l> | --preset <name> | --engine comby --pattern <p> --rewrite <r> --glob <g> [--root <dir>] [--glob <g>]"},
+    {"name": "apply", "summary": "Apply a stored plan (clean tree + unchanged files only), then verify",
+     "args": "--plan <id> [--root <dir>] [--no-verify]"},
+    {"name": "presets", "summary": "List preset transforms and engine availability", "args": ""},
+    {"name": "self-test", "summary": "Prove the engines work (in-memory)", "args": ""}
+  ],
+  "danger_level": "writes_repo",
+  "cache": "off",
+  "deps": {"python": ["ast_grep_py", "libcst"], "system": [], "optional": ["comby"]}
+}

@@ -1,0 +1,18 @@
+{
+  "name": "mutcheck",
+  "version": "0.1.0",
+  "purpose": "Mutation-lite test-strength probe: applies small targeted mutations (< to <=, + to -, == to !=, True to False) to the lines you changed, reruns the tests, and reports mutations the tests FAILED to catch. A green suite that survives mutation is a weak suite. Scoped to the diff, strict budget, framed as a probe not a proof.",
+  "reach_for_me_when": [
+    "your tests are green but you are not sure they would catch a bug in the code you just changed",
+    "you want to find the boundary/off-by-one cases your tests do not actually assert",
+    "you need evidence of test strength beyond line coverage"
+  ],
+  "commands": [
+    {"name": "check", "summary": "Mutate changed lines, rerun tests, report survivors; optional --min-kill gate",
+     "args": "[--root <dir>] [--base <ref>] [--staged] [--cmd <c>] [--max-mutants <n>] [--timeout <sec>] [--min-kill <ratio>]"},
+    {"name": "self-test", "summary": "Prove the mutation classification works", "args": ""}
+  ],
+  "danger_level": "writes_repo",
+  "cache": "off",
+  "deps": {"python": [], "system": [], "optional": []}
+}

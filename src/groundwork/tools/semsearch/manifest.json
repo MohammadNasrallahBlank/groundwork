@@ -1,0 +1,46 @@
+{
+  "name": "semsearch",
+  "version": "0.1.0",
+  "purpose": "Local semantic code search: chunk a repo at function/class granularity, embed with a small benchmarked ONNX model, index in sqlite-vec, and answer conceptual queries ('where's the retry logic') with ranked results and an honest confidence floor.",
+  "why": "On a large codebase, one semantic query returns the relevant chunks instead of many grep+read round-trips - but on a small repo plain grep is cheaper.",
+  "reach_for_me_when": [
+    "you need a conceptual query neither grep (lexical) nor an LSP (symbolic) can answer",
+    "you are looking for 'the code that does X' and do not know its name",
+    "you want ranked discovery results with a confidence signal, fully local"
+  ],
+  "avoid_when": [
+    "the repo is small or the thing you want is findable with one grep on an obvious keyword"
+  ],
+  "commands": [
+    {
+      "name": "index",
+      "summary": "Build/refresh the semantic index (incremental by content hash)",
+      "args": "[--root <dir>] [--model <name>] [--rebuild]"
+    },
+    {
+      "name": "query",
+      "summary": "Semantic search; ranked results with a confidence floor",
+      "args": "--q <str> [--root <dir>] [--k <int>] [--min-score <f>]"
+    },
+    {
+      "name": "models",
+      "summary": "Show the default model and availability; 'models pull' fetches it",
+      "args": "[pull [--model <name>]]"
+    },
+    {
+      "name": "self-test",
+      "summary": "Prove the tool works (model-free sqlite-vec round trip)",
+      "args": ""
+    }
+  ],
+  "danger_level": "writes_workspace",
+  "cache": "off",
+  "deps": {
+    "python": [
+      "fastembed",
+      "sqlite_vec"
+    ],
+    "system": [],
+    "optional": []
+  }
+}

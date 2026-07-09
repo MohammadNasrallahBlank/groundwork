@@ -1,0 +1,21 @@
+{
+  "name": "gates",
+  "version": "0.1.0",
+  "purpose": "Audited PreToolUse guard batteries: secret detection on writes (pattern pack + entropy hint), shell-aware dangerous-command interception (bash AND PowerShell), and protected-path enforcement - configured in .groundwork/gates.yaml over safe defaults.",
+  "reach_for_me_when": [
+    "you want secrets caught BEFORE they are written into the repo",
+    "you want rm -rf / or Remove-Item -Recurse -Force C:\\ stopped at the tool boundary",
+    "you need to check a file or command against the gate rules from CI or a script"
+  ],
+  "commands": [
+    {"name": "scan", "summary": "Scan content for secret patterns; exit 1 on findings",
+     "args": "[--file <p>] [--path <name>] [--root <dir>]  (content from --file or stdin)"},
+    {"name": "check-command", "summary": "Check a command against the dangerous-command packs; exit 1 on findings",
+     "args": "--command <str> [--root <dir>]"},
+    {"name": "show-config", "summary": "Print the effective config (defaults merged with gates.yaml)", "args": "[--root <dir>]"},
+    {"name": "self-test", "summary": "Prove the gate verdicts are consistent", "args": ""}
+  ],
+  "danger_level": "read_only",
+  "cache": "off",
+  "deps": {"python": ["yaml"], "system": [], "optional": []}
+}

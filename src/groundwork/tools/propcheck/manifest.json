@@ -1,0 +1,20 @@
+{
+  "name": "propcheck",
+  "version": "0.1.0",
+  "purpose": "Property-test scaffolder: from a function and a stated invariant (roundtrip/idempotent/oracle/never-raises), generate a visible, committable hypothesis property suite, and run it to report the shrunk counterexample as structured JSON. Finds boundary bugs example-based tests miss.",
+  "reach_for_me_when": [
+    "you have a pure function with an invariant (roundtrip, idempotent, matches a reference) worth testing exhaustively",
+    "you suspect a boundary/off-by-one bug example tests won't catch",
+    "you want a committed property suite that runs forever in CI, not a one-shot check"
+  ],
+  "commands": [
+    {"name": "new", "summary": "Generate a hypothesis property test file for an invariant",
+     "args": "--invariant roundtrip|idempotent|oracle|never_raises --module <m> --func <f> --strategy <s> [--inverse <m.n>] [--reference <m.n>] [--name <n>] --out <path> [--force]"},
+    {"name": "run", "summary": "Run a property file; report counterexamples as JSON (exit 1 on failure)",
+     "args": "--file <path>"},
+    {"name": "self-test", "summary": "Prove the generator works", "args": ""}
+  ],
+  "danger_level": "writes_repo",
+  "cache": "off",
+  "deps": {"python": ["hypothesis"], "system": [], "optional": []}
+}

@@ -1,0 +1,58 @@
+{
+  "name": "imgmeasure",
+  "version": "0.1.0",
+  "purpose": "Geometric measurement for images: gated ORB/RANSAC/ECC registration, ArUco scale calibration (px to mm), component counting, skeleton/width profiling, and registration-aligned change masks - measured JSON, not gist.",
+  "why": "Exact pixel/real-world measurements from an image, computed locally - numbers you cannot get by looking.",
+  "reach_for_me_when": [
+    "you are about to eyeball whether two frames are aligned, shifted, or changed",
+    "you need real-world units (mm) from an image with a fiducial marker in it",
+    "you need object counts, dimensions, or line widths from an image as data"
+  ],
+  "avoid_when": [
+    "you only need a rough sense of the image or to describe what it shows - read the image directly"
+  ],
+  "commands": [
+    {
+      "name": "register",
+      "summary": "Homography between two frames; exit 4 when unreliable",
+      "args": "--image-a <p> --image-b <p> [--min-matches <n>] [--min-inlier-ratio <f>]"
+    },
+    {
+      "name": "calibrate",
+      "summary": "mm-per-px scale from an ArUco marker of known size",
+      "args": "--image <p> --marker-mm <f> [--dict 4x4_50|5x5_100|6x6_250]"
+    },
+    {
+      "name": "count",
+      "summary": "Count connected components with per-object stats",
+      "args": "--image <p> [--threshold otsu|<int>] [--invert] [--min-area <n>]"
+    },
+    {
+      "name": "profile",
+      "summary": "Skeleton length and width stats for linear structures",
+      "args": "--image <p> [--threshold otsu|<int>] [--invert]"
+    },
+    {
+      "name": "diffmask",
+      "summary": "Register, align, and mask real changes between two frames",
+      "args": "--image-a <p> --image-b <p> [--name <id>] [--root <dir>] [--threshold <int>] [--min-matches <n>] [--min-inlier-ratio <f>]"
+    },
+    {
+      "name": "self-test",
+      "summary": "Prove the tool works (synthetic round trip)",
+      "args": ""
+    }
+  ],
+  "danger_level": "writes_workspace",
+  "cache": "off",
+  "deps": {
+    "python": [
+      "cv2",
+      "numpy",
+      "skimage",
+      "scipy"
+    ],
+    "system": [],
+    "optional": []
+  }
+}

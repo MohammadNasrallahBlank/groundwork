@@ -1,0 +1,14 @@
+.venv/
+__pycache__/
+*.egg-info/
+.groundwork/
+.superpowers/
+.tmp/
+.hypothesis/
+dist/
+eval/work/
+
+docs/
+eval/PILOT.md
+eval/run_with.ps1
+eval/run_without.ps1

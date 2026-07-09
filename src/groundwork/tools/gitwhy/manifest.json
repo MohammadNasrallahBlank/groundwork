@@ -1,0 +1,20 @@
+{
+  "name": "gitwhy",
+  "version": "0.1.0",
+  "purpose": "Code archaeology: for a file region, blame the lines, collect the commits that shaped them, condense their messages, and pull the linked PR/issue references with dates and authors - one JSON answer to 'why is this code like this?'. --churn surfaces hotspot files (high change frequency x low coverage) as a risk report.",
+  "reach_for_me_when": [
+    "you are about to grep-blame-log spelunk to understand why some code exists",
+    "you need the PR/issue that introduced or last changed a region",
+    "you want a risk report of files that change often but are barely tested"
+  ],
+  "commands": [
+    {"name": "explain", "summary": "Blame a region -> commits, authors, dates, and linked PR/issue refs",
+     "args": "--file <p> --lines <N[-M]> [--root <dir>]"},
+    {"name": "churn", "summary": "Rank files by change frequency; --coverage-json adds a risk score",
+     "args": "[--root <dir>] [--since <iso>] [--count <n>] [--top <n>] [--coverage-json <p>]"},
+    {"name": "self-test", "summary": "Prove the parsers work", "args": ""}
+  ],
+  "danger_level": "read_only",
+  "cache": "off",
+  "deps": {"python": [], "system": [], "optional": []}
+}

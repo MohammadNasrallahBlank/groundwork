@@ -1,0 +1,22 @@
+{
+  "name": "groundwork",
+  "displayName": "Groundwork",
+  "version": "0.1.0",
+  "description": "Deterministic local tool ecosystem: 23 verified, cached, JSON-contract CLIs that replace model inference for mechanical work.",
+  "author": {
+    "name": "Mohammad Nasrallah",
+    "email": "moe@blankonline.io"
+  },
+  "homepage": "https://github.com/MohammadNasrallahBlank/groundwork",
+  "repository": "https://github.com/MohammadNasrallahBlank/groundwork",
+  "keywords": [
+    "deterministic",
+    "verification",
+    "caching",
+    "hooks",
+    "code-map",
+    "semantic-search",
+    "codemod",
+    "calibration"
+  ]
+}

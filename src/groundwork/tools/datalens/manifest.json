@@ -1,0 +1,40 @@
+{
+  "name": "datalens",
+  "version": "0.1.0",
+  "purpose": "Dataset inspector: schema, per-column stats and distributions, class balance, malformed-row and outlier flagging over CSV/Parquet/JSONL/SQLite - one JSON report per call - plus PSI drift comparison between two datasets. DuckDB engine.",
+  "why": "Compute exact schema/nulls/distincts/outliers locally over the whole file and send only the report - far cheaper and more accurate than pasting a big CSV into context and eyeballing it.",
+  "reach_for_me_when": [
+    "you are about to reason about a dataset from its description instead of measuring it",
+    "you need schema, null counts, distributions, or class balance as structured data",
+    "you want to know how much two datasets (train/serve, before/after) have drifted"
+  ],
+  "avoid_when": [
+    "the file is tiny and you can read every row directly"
+  ],
+  "commands": [
+    {
+      "name": "profile",
+      "summary": "One JSON report: schema, stats, balance, outliers, malformed rows",
+      "args": "--file <p> [--table <t>] [--balance-max <n>]"
+    },
+    {
+      "name": "compare",
+      "summary": "Drift between two datasets: PSI per numeric column, share-shift per categorical",
+      "args": "--a <p> --b <p> [--table-a <t>] [--table-b <t>] [--bins <n>]"
+    },
+    {
+      "name": "self-test",
+      "summary": "Prove the tool works",
+      "args": ""
+    }
+  ],
+  "danger_level": "read_only",
+  "cache": "off",
+  "deps": {
+    "python": [
+      "duckdb"
+    ],
+    "system": [],
+    "optional": []
+  }
+}

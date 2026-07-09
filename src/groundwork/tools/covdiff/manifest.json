@@ -1,0 +1,18 @@
+{
+  "name": "covdiff",
+  "version": "0.1.0",
+  "purpose": "Coverage on changed lines: intersects code coverage with the git diff and reports exactly which CHANGED lines were never executed by the tests, per file, with a summary ratio and an optional --min gate. Turns 'are my edits tested?' from a vibe into a number.",
+  "reach_for_me_when": [
+    "you finished a change and want to know if the lines you touched are actually tested",
+    "you want a CI gate on changed-line coverage, not whole-repo coverage",
+    "you need the exact uncovered changed lines to write the missing tests"
+  ],
+  "commands": [
+    {"name": "check", "summary": "Report uncovered changed lines vs a base; optional --min gate (exit 1 below floor)",
+     "args": "[--root <dir>] [--base <ref>] [--staged] [--coverage-json <p>] [--cmd <c>] [--min <ratio>]"},
+    {"name": "self-test", "summary": "Prove the intersection logic works", "args": ""}
+  ],
+  "danger_level": "read_only",
+  "cache": "off",
+  "deps": {"python": ["coverage"], "system": [], "optional": []}
+}

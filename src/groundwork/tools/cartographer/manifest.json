@@ -1,0 +1,36 @@
+{
+  "name": "cartographer",
+  "version": "0.1.0",
+  "purpose": "Token-budgeted structural map of a repository: key symbols ranked by reference centrality, fitted to a token budget, incremental via per-file caching.",
+  "why": "One compact ranked map replaces reading dozens of files to orient - on a large repo that is a big token saving, and reference-centrality is computed exactly rather than guessed.",
+  "reach_for_me_when": [
+    "you are starting work in an unfamiliar repository and need its shape fast",
+    "you need a compact overview of the most central symbols without reading every file",
+    "your context was compacted and you need to re-orient on the codebase"
+  ],
+  "avoid_when": [
+    "the repo is small enough to just read the few relevant files directly"
+  ],
+  "commands": [
+    {
+      "name": "map",
+      "summary": "Emit a ranked, budget-fitted repo map",
+      "args": "[--root <dir>] [--budget <int>] [--no-cache]"
+    },
+    {
+      "name": "self-test",
+      "summary": "Prove the tool works",
+      "args": ""
+    }
+  ],
+  "danger_level": "read_only",
+  "cache": "content",
+  "deps": {
+    "python": [
+      "tree_sitter",
+      "tree_sitter_language_pack"
+    ],
+    "system": [],
+    "optional": []
+  }
+}

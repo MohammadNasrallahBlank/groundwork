@@ -1,0 +1,13 @@
+{
+  "name": "hello",
+  "version": "0.1.0",
+  "purpose": "Reference tool proving the groundwork contract end to end.",
+  "reach_for_me_when": ["you need to verify groundwork is installed and healthy"],
+  "commands": [
+    {"name": "greet", "summary": "Return a greeting", "args": "--name <str>"},
+    {"name": "self-test", "summary": "Prove the tool works", "args": ""}
+  ],
+  "danger_level": "read_only",
+  "cache": "off",
+  "deps": {"python": [], "system": [], "optional": []}
+}
