@@ -1,0 +1,69 @@
+{
+  "task": "covdiffbig",
+  "targets": [
+    "covdiff"
+  ],
+  "condition": "with",
+  "run": 1,
+  "session": "31215ebc-43ab-4b48-878a-3124f44a5249.jsonl",
+  "workdir": "eval/work/covdiffbig-with-1",
+  "check": {
+    "pass": true,
+    "accuracy": 1.0,
+    "detail": "found 3/3; missing []"
+  },
+  "rubric": {
+    "correctness": 5,
+    "completeness": 5,
+    "clarity": 5
+  },
+  "judge": {
+    "model": "claude-sonnet-5",
+    "reasoning": "Matches ground truth exactly: divide() is entirely uncovered (only its def line executes on import), and the body lines 10-12 (zero check and return) are untested, consistent with the assistant's precise line-level breakdown."
+  },
+  "notes": "",
+  "speed": {
+    "wall_clock_s": 41.7,
+    "wall_clock_min": 0.7,
+    "human_prompts": 1,
+    "assistant_messages": 20,
+    "api_requests": 10,
+    "tool_calls": 10
+  },
+  "cost": {
+    "total_tokens": 1015028,
+    "billable_tokens_excl_cache_read": 80033,
+    "input_tokens": 25343,
+    "output_tokens": 4591,
+    "cache_read_input_tokens": 934995,
+    "cache_creation_input_tokens": 50099,
+    "cache_read_ratio": 0.9212,
+    "estimated_usd": 0.6133,
+    "per_model": {
+      "claude-sonnet-5": {
+        "input_tokens": 25343,
+        "output_tokens": 4591,
+        "cache_read_input_tokens": 934995,
+        "cache_creation_input_tokens": 50099,
+        "cost_usd": 0.613264
+      }
+    }
+  },
+  "efficiency": {
+    "tool_calls_total": 10,
+    "tool_calls_by_name": {
+      "Bash": 7,
+      "Read": 2,
+      "Skill": 1
+    },
+    "groundwork_tool_invocations": 2,
+    "groundwork_tools_used": {
+      "covdiff": 2
+    },
+    "distinct_groundwork_tools": 1,
+    "groundwork_attributed_messages": 18,
+    "tokens_per_tool_call": 101502.8,
+    "api_errors": 0,
+    "tool_errors": 0
+  }
+}

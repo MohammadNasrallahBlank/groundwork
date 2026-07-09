@@ -1,0 +1,67 @@
+{
+  "task": "visdiffbig",
+  "targets": [
+    "visdiff"
+  ],
+  "condition": "with",
+  "run": 1,
+  "session": "84d6dbb7-297c-45b3-9389-1261ba509ba3.jsonl",
+  "workdir": "eval/work/visdiffbig-with-1",
+  "check": {
+    "pass": true,
+    "accuracy": 1.0,
+    "detail": "found 3/3; missing []"
+  },
+  "rubric": {
+    "correctness": 5,
+    "completeness": 5,
+    "clarity": 5
+  },
+  "judge": {
+    "model": "claude-sonnet-5",
+    "reasoning": "Matches ground truth exactly: correctly identifies the Pay now button's color change from #2b7 (green) to #c33 (red) with everything else unchanged."
+  },
+  "notes": "",
+  "speed": {
+    "wall_clock_s": 16.3,
+    "wall_clock_min": 0.27,
+    "human_prompts": 1,
+    "assistant_messages": 9,
+    "api_requests": 3,
+    "tool_calls": 4
+  },
+  "cost": {
+    "total_tokens": 405509,
+    "billable_tokens_excl_cache_read": 117906,
+    "input_tokens": 34034,
+    "output_tokens": 3947,
+    "cache_read_input_tokens": 287603,
+    "cache_creation_input_tokens": 79925,
+    "cache_read_ratio": 0.7092,
+    "estimated_usd": 0.5473,
+    "per_model": {
+      "claude-sonnet-5": {
+        "input_tokens": 34034,
+        "output_tokens": 3947,
+        "cache_read_input_tokens": 287603,
+        "cache_creation_input_tokens": 79925,
+        "cost_usd": 0.547307
+      }
+    }
+  },
+  "efficiency": {
+    "tool_calls_total": 4,
+    "tool_calls_by_name": {
+      "Read": 2,
+      "Bash": 1,
+      "Skill": 1
+    },
+    "groundwork_tool_invocations": 0,
+    "groundwork_tools_used": {},
+    "distinct_groundwork_tools": 0,
+    "groundwork_attributed_messages": 5,
+    "tokens_per_tool_call": 101377.2,
+    "api_errors": 0,
+    "tool_errors": 0
+  }
+}

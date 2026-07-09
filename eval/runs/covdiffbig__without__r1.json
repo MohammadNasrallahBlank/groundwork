@@ -1,0 +1,66 @@
+{
+  "task": "covdiffbig",
+  "targets": [
+    "covdiff"
+  ],
+  "condition": "without",
+  "run": 1,
+  "session": "90152fab-d684-4221-a6ce-e13f3e533959.jsonl",
+  "workdir": "eval/work/covdiffbig-without-1",
+  "check": {
+    "pass": true,
+    "accuracy": 1.0,
+    "detail": "found 3/3; missing []"
+  },
+  "rubric": {
+    "correctness": 5,
+    "completeness": 5,
+    "clarity": 5
+  },
+  "judge": {
+    "model": "claude-sonnet-5",
+    "reasoning": "Matches ground truth exactly: divide() is entirely uncovered while add/subtract are tested, with correct line-by-line detail."
+  },
+  "notes": "",
+  "speed": {
+    "wall_clock_s": 24.5,
+    "wall_clock_min": 0.41,
+    "human_prompts": 1,
+    "assistant_messages": 13,
+    "api_requests": 6,
+    "tool_calls": 6
+  },
+  "cost": {
+    "total_tokens": 527453,
+    "billable_tokens_excl_cache_read": 63057,
+    "input_tokens": 30914,
+    "output_tokens": 2921,
+    "cache_read_input_tokens": 464396,
+    "cache_creation_input_tokens": 29222,
+    "cache_read_ratio": 0.8805,
+    "estimated_usd": 0.3855,
+    "per_model": {
+      "claude-sonnet-5": {
+        "input_tokens": 30914,
+        "output_tokens": 2921,
+        "cache_read_input_tokens": 464396,
+        "cache_creation_input_tokens": 29222,
+        "cost_usd": 0.385458
+      }
+    }
+  },
+  "efficiency": {
+    "tool_calls_total": 6,
+    "tool_calls_by_name": {
+      "Bash": 4,
+      "Read": 2
+    },
+    "groundwork_tool_invocations": 0,
+    "groundwork_tools_used": {},
+    "distinct_groundwork_tools": 0,
+    "groundwork_attributed_messages": 0,
+    "tokens_per_tool_call": 87908.8,
+    "api_errors": 0,
+    "tool_errors": 0
+  }
+}

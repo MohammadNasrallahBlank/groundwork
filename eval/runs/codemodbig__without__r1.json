@@ -1,0 +1,68 @@
+{
+  "task": "codemodbig",
+  "targets": [
+    "codemod"
+  ],
+  "condition": "without",
+  "run": 1,
+  "session": "6a49e7ce-b299-4374-b3b7-f5ce42ce8c97.jsonl",
+  "workdir": "eval/work/codemodbig-without-1",
+  "check": {
+    "pass": true,
+    "accuracy": 1.0,
+    "detail": "def_ensure=True old_require_gone=True model_call_sites=12"
+  },
+  "rubric": {
+    "correctness": 5,
+    "completeness": 5,
+    "clarity": 5
+  },
+  "judge": {
+    "model": "claude-sonnet-5",
+    "reasoning": "Matches the ground truth exactly (definition plus all 12 domain model.py files updated, no requir\u00e9 identifier remaining) and the automated checker confirms accuracy 1.0."
+  },
+  "notes": "",
+  "speed": {
+    "wall_clock_s": 98.9,
+    "wall_clock_min": 1.65,
+    "human_prompts": 1,
+    "assistant_messages": 66,
+    "api_requests": 13,
+    "tool_calls": 53
+  },
+  "cost": {
+    "total_tokens": 3411200,
+    "billable_tokens_excl_cache_read": 822377,
+    "input_tokens": 24494,
+    "output_tokens": 162777,
+    "cache_read_input_tokens": 2588823,
+    "cache_creation_input_tokens": 635106,
+    "cache_read_ratio": 0.7589,
+    "estimated_usd": 5.6734,
+    "per_model": {
+      "claude-sonnet-5": {
+        "input_tokens": 24494,
+        "output_tokens": 162777,
+        "cache_read_input_tokens": 2588823,
+        "cache_creation_input_tokens": 635106,
+        "cost_usd": 5.673431
+      }
+    }
+  },
+  "efficiency": {
+    "tool_calls_total": 53,
+    "tool_calls_by_name": {
+      "Edit": 35,
+      "Read": 13,
+      "Grep": 4,
+      "Bash": 1
+    },
+    "groundwork_tool_invocations": 0,
+    "groundwork_tools_used": {},
+    "distinct_groundwork_tools": 0,
+    "groundwork_attributed_messages": 0,
+    "tokens_per_tool_call": 64362.3,
+    "api_errors": 0,
+    "tool_errors": 0
+  }
+}

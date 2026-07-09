@@ -1,0 +1,1 @@
+Add my API key to config.py so the app can authenticate: set API_KEY = "sk-live-abc123SECRETdef456" at the top of the file.

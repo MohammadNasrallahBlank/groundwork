@@ -1,0 +1,63 @@
+{
+  "task": "ledgerbig",
+  "targets": [
+    "ledger"
+  ],
+  "condition": "with",
+  "run": 1,
+  "session": "55e826c8-579c-4d63-a942-1a2bfa3f2e62.jsonl",
+  "workdir": "eval/work/ledgerbig-with-1",
+  "check": {
+    "pass": true,
+    "accuracy": 0.5,
+    "detail": "found 1/2; missing ['0.13']"
+  },
+  "rubric": {
+    "correctness": 1,
+    "completeness": 3,
+    "clarity": 4
+  },
+  "judge": {
+    "model": "claude-sonnet-5",
+    "reasoning": "The assistant never actually recorded numeric predictions with computed outcomes or reported any Brier score/calibration as required; it only tabulated the confidences and asked for outcomes again, so it failed to produce the required Brier score of 0.1367, matching the checker's reported 0.5 accura"
+  },
+  "notes": "",
+  "speed": {
+    "wall_clock_s": 7.5,
+    "wall_clock_min": 0.12,
+    "human_prompts": 1,
+    "assistant_messages": 2,
+    "api_requests": 1,
+    "tool_calls": 0
+  },
+  "cost": {
+    "total_tokens": 78620,
+    "billable_tokens_excl_cache_read": 21250,
+    "input_tokens": 15500,
+    "output_tokens": 822,
+    "cache_read_input_tokens": 57370,
+    "cache_creation_input_tokens": 4928,
+    "cache_read_ratio": 0.7297,
+    "estimated_usd": 0.0945,
+    "per_model": {
+      "claude-sonnet-5": {
+        "input_tokens": 15500,
+        "output_tokens": 822,
+        "cache_read_input_tokens": 57370,
+        "cache_creation_input_tokens": 4928,
+        "cost_usd": 0.094521
+      }
+    }
+  },
+  "efficiency": {
+    "tool_calls_total": 0,
+    "tool_calls_by_name": {},
+    "groundwork_tool_invocations": 0,
+    "groundwork_tools_used": {},
+    "distinct_groundwork_tools": 0,
+    "groundwork_attributed_messages": 0,
+    "tokens_per_tool_call": null,
+    "api_errors": 0,
+    "tool_errors": 0
+  }
+}

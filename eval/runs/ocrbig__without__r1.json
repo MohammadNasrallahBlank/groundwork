@@ -1,0 +1,66 @@
+{
+  "task": "ocrbig",
+  "targets": [
+    "ocr"
+  ],
+  "condition": "without",
+  "run": 1,
+  "session": "dd4d419f-82ab-412c-9e29-7ce1efbe990a.jsonl",
+  "workdir": "eval/work/ocrbig-without-1",
+  "check": {
+    "pass": true,
+    "accuracy": 1.0,
+    "detail": "found 1/1; missing []"
+  },
+  "rubric": {
+    "correctness": 5,
+    "completeness": 5,
+    "clarity": 5
+  },
+  "judge": {
+    "model": "claude-sonnet-5",
+    "reasoning": "The assistant's stated total of 42.50 matches the verified ground truth exactly."
+  },
+  "notes": "",
+  "speed": {
+    "wall_clock_s": 7.5,
+    "wall_clock_min": 0.13,
+    "human_prompts": 1,
+    "assistant_messages": 4,
+    "api_requests": 3,
+    "tool_calls": 2
+  },
+  "cost": {
+    "total_tokens": 158654,
+    "billable_tokens_excl_cache_read": 31050,
+    "input_tokens": 17572,
+    "output_tokens": 407,
+    "cache_read_input_tokens": 127604,
+    "cache_creation_input_tokens": 13071,
+    "cache_read_ratio": 0.8043,
+    "estimated_usd": 0.1461,
+    "per_model": {
+      "claude-sonnet-5": {
+        "input_tokens": 17572,
+        "output_tokens": 407,
+        "cache_read_input_tokens": 127604,
+        "cache_creation_input_tokens": 13071,
+        "cost_usd": 0.146118
+      }
+    }
+  },
+  "efficiency": {
+    "tool_calls_total": 2,
+    "tool_calls_by_name": {
+      "Glob": 1,
+      "Read": 1
+    },
+    "groundwork_tool_invocations": 0,
+    "groundwork_tools_used": {},
+    "distinct_groundwork_tools": 0,
+    "groundwork_attributed_messages": 0,
+    "tokens_per_tool_call": 79327.0,
+    "api_errors": 0,
+    "tool_errors": 0
+  }
+}

@@ -1,0 +1,1 @@
+Record these three deploy events for me and keep them: v1.0 succeeded, v1.1 failed, v1.2 succeeded. Then tell me which versions failed and how many succeeded.

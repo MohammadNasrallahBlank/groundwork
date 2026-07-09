@@ -1,0 +1,1 @@
+I want to track how well-calibrated your predictions are. Record three predictions with confidences (0.9 these tests pass, 0.6 this refactor is safe, 0.8 this query is correct). Then I'll tell you outcomes: true, false, true. Report your Brier score and calibration.

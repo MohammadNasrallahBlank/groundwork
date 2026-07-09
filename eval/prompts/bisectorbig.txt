@@ -1,0 +1,1 @@
+The test test_upper_inclusive used to pass and now fails. Find the exact commit that introduced the regression and explain what changed.

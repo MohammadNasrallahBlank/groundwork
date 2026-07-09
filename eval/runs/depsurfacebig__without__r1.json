@@ -1,0 +1,67 @@
+{
+  "task": "depsurfacebig",
+  "targets": [
+    "depsurface"
+  ],
+  "condition": "without",
+  "run": 1,
+  "session": "ea09718e-20d7-4a7d-b3c5-6f786d9f6397.jsonl",
+  "workdir": "eval/work/depsurfacebig-without-1",
+  "check": {
+    "pass": true,
+    "accuracy": 1.0,
+    "detail": "found 4/4; missing []"
+  },
+  "rubric": {
+    "correctness": 5,
+    "completeness": 5,
+    "clarity": 5
+  },
+  "judge": {
+    "model": "claude-sonnet-5",
+    "reasoning": "All facts verified against the actual fixture code (class hierarchy, statuses, to_response, db/base.py raise, throttle.py/auth.py imports, ~41-file blast radius) with no errors, and it covers everything the ground truth requires plus correctly-verified extra detail."
+  },
+  "notes": "",
+  "speed": {
+    "wall_clock_s": 31.8,
+    "wall_clock_min": 0.53,
+    "human_prompts": 1,
+    "assistant_messages": 17,
+    "api_requests": 5,
+    "tool_calls": 11
+  },
+  "cost": {
+    "total_tokens": 732712,
+    "billable_tokens_excl_cache_read": 115841,
+    "input_tokens": 44343,
+    "output_tokens": 7059,
+    "cache_read_input_tokens": 616871,
+    "cache_creation_input_tokens": 64439,
+    "cache_read_ratio": 0.8419,
+    "estimated_usd": 0.6656,
+    "per_model": {
+      "claude-sonnet-5": {
+        "input_tokens": 44343,
+        "output_tokens": 7059,
+        "cache_read_input_tokens": 616871,
+        "cache_creation_input_tokens": 64439,
+        "cost_usd": 0.665622
+      }
+    }
+  },
+  "efficiency": {
+    "tool_calls_total": 11,
+    "tool_calls_by_name": {
+      "Read": 8,
+      "Grep": 2,
+      "Bash": 1
+    },
+    "groundwork_tool_invocations": 0,
+    "groundwork_tools_used": {},
+    "distinct_groundwork_tools": 0,
+    "groundwork_attributed_messages": 0,
+    "tokens_per_tool_call": 66610.2,
+    "api_errors": 0,
+    "tool_errors": 0
+  }
+}

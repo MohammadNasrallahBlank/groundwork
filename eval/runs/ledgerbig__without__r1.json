@@ -1,0 +1,63 @@
+{
+  "task": "ledgerbig",
+  "targets": [
+    "ledger"
+  ],
+  "condition": "without",
+  "run": 1,
+  "session": "f5a2b176-2994-4029-b43d-c0cf39df95b4.jsonl",
+  "workdir": "eval/work/ledgerbig-without-1",
+  "check": {
+    "pass": true,
+    "accuracy": 0.5,
+    "detail": "found 1/2; missing ['0.13']"
+  },
+  "rubric": {
+    "correctness": 4,
+    "completeness": 5,
+    "clarity": 5
+  },
+  "judge": {
+    "model": "claude-sonnet-5",
+    "reasoning": "Arithmetic sum/3 = 0.41/3 = 0.1367, but assistant rounded to 0.137, a minor precision discrepancy rather than a wrong fact."
+  },
+  "notes": "",
+  "speed": {
+    "wall_clock_s": 14.7,
+    "wall_clock_min": 0.24,
+    "human_prompts": 1,
+    "assistant_messages": 2,
+    "api_requests": 1,
+    "tool_calls": 0
+  },
+  "cost": {
+    "total_tokens": 80294,
+    "billable_tokens_excl_cache_read": 22924,
+    "input_tokens": 14540,
+    "output_tokens": 2818,
+    "cache_read_input_tokens": 57370,
+    "cache_creation_input_tokens": 5566,
+    "cache_read_ratio": 0.7145,
+    "estimated_usd": 0.124,
+    "per_model": {
+      "claude-sonnet-5": {
+        "input_tokens": 14540,
+        "output_tokens": 2818,
+        "cache_read_input_tokens": 57370,
+        "cache_creation_input_tokens": 5566,
+        "cost_usd": 0.123974
+      }
+    }
+  },
+  "efficiency": {
+    "tool_calls_total": 0,
+    "tool_calls_by_name": {},
+    "groundwork_tool_invocations": 0,
+    "groundwork_tools_used": {},
+    "distinct_groundwork_tools": 0,
+    "groundwork_attributed_messages": 0,
+    "tokens_per_tool_call": null,
+    "api_errors": 0,
+    "tool_errors": 0
+  }
+}

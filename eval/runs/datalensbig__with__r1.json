@@ -1,0 +1,70 @@
+{
+  "task": "datalensbig",
+  "targets": [
+    "datalens"
+  ],
+  "condition": "with",
+  "run": 1,
+  "session": "3d8ca157-9084-427a-b8e0-24c7ece049bd.jsonl",
+  "workdir": "eval/work/datalensbig-with-1",
+  "check": {
+    "pass": true,
+    "accuracy": 0.75,
+    "detail": "found 3/4; missing ['8888888']"
+  },
+  "rubric": {
+    "correctness": 3,
+    "completeness": 5,
+    "clarity": 5
+  },
+  "judge": {
+    "model": "claude-sonnet-5",
+    "reasoning": "Distinct customer count is reported as ~109 vs the ground truth of ~120, a clear numeric discrepancy despite all other facts (300x5 shape, columns, 17 nulls in amount only, the 8888888 outlier, 5 regions, 3 statuses) being correct."
+  },
+  "notes": "",
+  "speed": {
+    "wall_clock_s": 25.9,
+    "wall_clock_min": 0.43,
+    "human_prompts": 1,
+    "assistant_messages": 11,
+    "api_requests": 6,
+    "tool_calls": 5
+  },
+  "cost": {
+    "total_tokens": 544262,
+    "billable_tokens_excl_cache_read": 74251,
+    "input_tokens": 21574,
+    "output_tokens": 2623,
+    "cache_read_input_tokens": 470011,
+    "cache_creation_input_tokens": 50054,
+    "cache_read_ratio": 0.8636,
+    "estimated_usd": 0.4328,
+    "per_model": {
+      "claude-sonnet-5": {
+        "input_tokens": 21574,
+        "output_tokens": 2623,
+        "cache_read_input_tokens": 470011,
+        "cache_creation_input_tokens": 50054,
+        "cost_usd": 0.432773
+      }
+    }
+  },
+  "efficiency": {
+    "tool_calls_total": 5,
+    "tool_calls_by_name": {
+      "Bash": 3,
+      "Skill": 1,
+      "Glob": 1
+    },
+    "groundwork_tool_invocations": 4,
+    "groundwork_tools_used": {
+      "scratchdb": 3,
+      "datalens": 1
+    },
+    "distinct_groundwork_tools": 2,
+    "groundwork_attributed_messages": 9,
+    "tokens_per_tool_call": 108852.4,
+    "api_errors": 0,
+    "tool_errors": 0
+  }
+}

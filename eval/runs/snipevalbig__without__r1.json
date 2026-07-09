@@ -1,0 +1,66 @@
+{
+  "task": "snipevalbig",
+  "targets": [
+    "snipeval"
+  ],
+  "condition": "without",
+  "run": 1,
+  "session": "122c81d6-2609-460c-943f-11af4ec0d71a.jsonl",
+  "workdir": "eval/work/snipevalbig-without-1",
+  "check": {
+    "pass": true,
+    "accuracy": 1.0,
+    "detail": "found 1/1; missing []"
+  },
+  "rubric": {
+    "correctness": 5,
+    "completeness": 5,
+    "clarity": 5
+  },
+  "judge": {
+    "model": "claude-sonnet-5",
+    "reasoning": "Matches ground truth exactly ([4, 4, 4, 4, 4]) with a correct explanation of late-binding closures."
+  },
+  "notes": "",
+  "speed": {
+    "wall_clock_s": 10.8,
+    "wall_clock_min": 0.18,
+    "human_prompts": 1,
+    "assistant_messages": 6,
+    "api_requests": 3,
+    "tool_calls": 2
+  },
+  "cost": {
+    "total_tokens": 240516,
+    "billable_tokens_excl_cache_read": 42596,
+    "input_tokens": 20604,
+    "output_tokens": 1202,
+    "cache_read_input_tokens": 197920,
+    "cache_creation_input_tokens": 20790,
+    "cache_read_ratio": 0.8229,
+    "estimated_usd": 0.2172,
+    "per_model": {
+      "claude-sonnet-5": {
+        "input_tokens": 20604,
+        "output_tokens": 1202,
+        "cache_read_input_tokens": 197920,
+        "cache_creation_input_tokens": 20790,
+        "cost_usd": 0.21718
+      }
+    }
+  },
+  "efficiency": {
+    "tool_calls_total": 2,
+    "tool_calls_by_name": {
+      "Glob": 1,
+      "Read": 1
+    },
+    "groundwork_tool_invocations": 0,
+    "groundwork_tools_used": {},
+    "distinct_groundwork_tools": 0,
+    "groundwork_attributed_messages": 0,
+    "tokens_per_tool_call": 120258.0,
+    "api_errors": 0,
+    "tool_errors": 0
+  }
+}

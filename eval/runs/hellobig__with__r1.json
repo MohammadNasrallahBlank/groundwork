@@ -1,0 +1,68 @@
+{
+  "task": "hellobig",
+  "targets": [
+    "hello"
+  ],
+  "condition": "with",
+  "run": 1,
+  "session": "ff36f2fd-5135-4b5b-b536-1f3754753f38.jsonl",
+  "workdir": "eval/work/hellobig-with-1",
+  "check": {
+    "pass": true,
+    "accuracy": 1.0,
+    "detail": "found 1/1; missing []"
+  },
+  "rubric": {
+    "correctness": 3,
+    "completeness": 2,
+    "clarity": 4
+  },
+  "judge": {
+    "model": "claude-sonnet-5",
+    "reasoning": "The assistant only ran the 'hello' tool's greet/self-test and generalized that to 'the Groundwork CLI is installed and healthy,' but never ran a full doctor-style check across all tools (deps_ok/self_test per tool, semsearch status) as the ground truth requires, so the toolchain-wide claim is unveri"
+  },
+  "notes": "",
+  "speed": {
+    "wall_clock_s": 11.7,
+    "wall_clock_min": 0.19,
+    "human_prompts": 1,
+    "assistant_messages": 6,
+    "api_requests": 3,
+    "tool_calls": 3
+  },
+  "cost": {
+    "total_tokens": 275654,
+    "billable_tokens_excl_cache_read": 76852,
+    "input_tokens": 18536,
+    "output_tokens": 1762,
+    "cache_read_input_tokens": 198802,
+    "cache_creation_input_tokens": 56554,
+    "cache_read_ratio": 0.7212,
+    "estimated_usd": 0.3538,
+    "per_model": {
+      "claude-sonnet-5": {
+        "input_tokens": 18536,
+        "output_tokens": 1762,
+        "cache_read_input_tokens": 198802,
+        "cache_creation_input_tokens": 56554,
+        "cost_usd": 0.353756
+      }
+    }
+  },
+  "efficiency": {
+    "tool_calls_total": 3,
+    "tool_calls_by_name": {
+      "Bash": 2,
+      "Skill": 1
+    },
+    "groundwork_tool_invocations": 2,
+    "groundwork_tools_used": {
+      "hello": 2
+    },
+    "distinct_groundwork_tools": 1,
+    "groundwork_attributed_messages": 4,
+    "tokens_per_tool_call": 91884.7,
+    "api_errors": 0,
+    "tool_errors": 0
+  }
+}

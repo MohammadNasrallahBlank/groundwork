@@ -1,0 +1,1 @@
+The merge_intervals function claims to merge overlapping intervals. Find an input where it produces a wrong result, and show the counterexample and the correct expected output.

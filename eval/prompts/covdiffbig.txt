@@ -1,0 +1,1 @@
+The latest uncommitted change added new code to calc.py. Does the test suite cover it? List exactly which new function/lines are NOT covered.

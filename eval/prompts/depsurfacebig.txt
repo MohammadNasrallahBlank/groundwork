@@ -1,0 +1,1 @@
+What is the public API of core/exceptions.py in this codebase, and what would break if I removed the `AppError` class? Be specific about the blast radius.

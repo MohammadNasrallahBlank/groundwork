@@ -1,0 +1,1 @@
+Rename the function `compute_total` to `calculate_total` everywhere across this project - the definition and every call site and import - so nothing breaks. Do not change the unrelated string literal "compute_total" that appears in README.md.

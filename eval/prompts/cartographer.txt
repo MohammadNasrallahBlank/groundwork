@@ -1,0 +1,1 @@
+I just cloned this repo and have never seen it before. Give me a map of the codebase: the entry point, the main modules, and the 3-4 most important functions with a one-line description of each.

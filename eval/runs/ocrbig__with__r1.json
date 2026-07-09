@@ -1,0 +1,69 @@
+{
+  "task": "ocrbig",
+  "targets": [
+    "ocr"
+  ],
+  "condition": "with",
+  "run": 1,
+  "session": "70b99560-9a94-439a-88de-fdf0505de097.jsonl",
+  "workdir": "eval/work/ocrbig-with-1",
+  "check": {
+    "pass": true,
+    "accuracy": 1.0,
+    "detail": "found 1/1; missing []"
+  },
+  "rubric": {
+    "correctness": 5,
+    "completeness": 5,
+    "clarity": 5
+  },
+  "judge": {
+    "model": "claude-sonnet-5",
+    "reasoning": "The assistant correctly reported TOTAL: 42.50, matching the ground truth exactly, and appropriately flagged the line-item discrepancy without altering the correct answer."
+  },
+  "notes": "",
+  "speed": {
+    "wall_clock_s": 24.8,
+    "wall_clock_min": 0.41,
+    "human_prompts": 1,
+    "assistant_messages": 9,
+    "api_requests": 5,
+    "tool_calls": 4
+  },
+  "cost": {
+    "total_tokens": 436024,
+    "billable_tokens_excl_cache_read": 71080,
+    "input_tokens": 21570,
+    "output_tokens": 1790,
+    "cache_read_input_tokens": 364944,
+    "cache_creation_input_tokens": 47720,
+    "cache_read_ratio": 0.837,
+    "estimated_usd": 0.38,
+    "per_model": {
+      "claude-sonnet-5": {
+        "input_tokens": 21570,
+        "output_tokens": 1790,
+        "cache_read_input_tokens": 364944,
+        "cache_creation_input_tokens": 47720,
+        "cost_usd": 0.379993
+      }
+    }
+  },
+  "efficiency": {
+    "tool_calls_total": 4,
+    "tool_calls_by_name": {
+      "Bash": 2,
+      "Skill": 1,
+      "Read": 1
+    },
+    "groundwork_tool_invocations": 1,
+    "groundwork_tools_used": {
+      "ocr": 1
+    },
+    "distinct_groundwork_tools": 1,
+    "groundwork_attributed_messages": 7,
+    "tokens_per_tool_call": 109006.0,
+    "api_errors": 0,
+    "tool_errors": 0
+  }
+}

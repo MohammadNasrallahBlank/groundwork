@@ -1,0 +1,69 @@
+{
+  "task": "mutcheckbig",
+  "targets": [
+    "mutcheck"
+  ],
+  "condition": "with",
+  "run": 1,
+  "session": "8827457d-d57f-4884-842d-f757ab480ce8.jsonl",
+  "workdir": "eval/work/mutcheckbig-with-1",
+  "check": {
+    "pass": true,
+    "accuracy": 1.0,
+    "detail": "found 2/2; missing []"
+  },
+  "rubric": {
+    "correctness": 5,
+    "completeness": 5,
+    "clarity": 5
+  },
+  "judge": {
+    "model": "claude-sonnet-5",
+    "reasoning": "Matches ground truth exactly: identifies the untested x > hi branch, the surviving mutation, and the missing clamp(15,0,10)==10 test."
+  },
+  "notes": "",
+  "speed": {
+    "wall_clock_s": 81.2,
+    "wall_clock_min": 1.35,
+    "human_prompts": 1,
+    "assistant_messages": 24,
+    "api_requests": 11,
+    "tool_calls": 12
+  },
+  "cost": {
+    "total_tokens": 1280500,
+    "billable_tokens_excl_cache_read": 130310,
+    "input_tokens": 22104,
+    "output_tokens": 12940,
+    "cache_read_input_tokens": 1150190,
+    "cache_creation_input_tokens": 95266,
+    "cache_read_ratio": 0.8982,
+    "estimated_usd": 0.9627,
+    "per_model": {
+      "claude-sonnet-5": {
+        "input_tokens": 22104,
+        "output_tokens": 12940,
+        "cache_read_input_tokens": 1150190,
+        "cache_creation_input_tokens": 95266,
+        "cost_usd": 0.962716
+      }
+    }
+  },
+  "efficiency": {
+    "tool_calls_total": 12,
+    "tool_calls_by_name": {
+      "Bash": 9,
+      "Read": 2,
+      "Skill": 1
+    },
+    "groundwork_tool_invocations": 2,
+    "groundwork_tools_used": {
+      "mutcheck": 2
+    },
+    "distinct_groundwork_tools": 1,
+    "groundwork_attributed_messages": 22,
+    "tokens_per_tool_call": 106708.3,
+    "api_errors": 0,
+    "tool_errors": 0
+  }
+}

@@ -1,0 +1,67 @@
+{
+  "task": "hellobig",
+  "targets": [
+    "hello"
+  ],
+  "condition": "without",
+  "run": 1,
+  "session": "e5d38e48-7da8-4ac1-8a73-a667485f1b3e.jsonl",
+  "workdir": "eval/work/hellobig-without-1",
+  "check": {
+    "pass": true,
+    "accuracy": 1.0,
+    "detail": "found 1/1; missing []"
+  },
+  "rubric": {
+    "correctness": 5,
+    "completeness": 5,
+    "clarity": 5
+  },
+  "judge": {
+    "model": "claude-sonnet-5",
+    "reasoning": "Matches ground truth: all tools deps_ok/self_test pass, overall healthy, with no factual errors."
+  },
+  "notes": "",
+  "speed": {
+    "wall_clock_s": 42.7,
+    "wall_clock_min": 0.71,
+    "human_prompts": 1,
+    "assistant_messages": 19,
+    "api_requests": 7,
+    "tool_calls": 10
+  },
+  "cost": {
+    "total_tokens": 865062,
+    "billable_tokens_excl_cache_read": 120006,
+    "input_tokens": 41461,
+    "output_tokens": 7167,
+    "cache_read_input_tokens": 745056,
+    "cache_creation_input_tokens": 71378,
+    "cache_read_ratio": 0.8613,
+    "estimated_usd": 0.7231,
+    "per_model": {
+      "claude-sonnet-5": {
+        "input_tokens": 41461,
+        "output_tokens": 7167,
+        "cache_read_input_tokens": 745056,
+        "cache_creation_input_tokens": 71378,
+        "cost_usd": 0.723072
+      }
+    }
+  },
+  "efficiency": {
+    "tool_calls_total": 10,
+    "tool_calls_by_name": {
+      "Bash": 8,
+      "Grep": 1,
+      "Read": 1
+    },
+    "groundwork_tool_invocations": 0,
+    "groundwork_tools_used": {},
+    "distinct_groundwork_tools": 0,
+    "groundwork_attributed_messages": 0,
+    "tokens_per_tool_call": 86506.2,
+    "api_errors": 0,
+    "tool_errors": 0
+  }
+}

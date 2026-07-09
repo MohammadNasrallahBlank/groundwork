@@ -1,0 +1,1 @@
+Profile sales.csv: how many rows and columns, the column names, how many nulls in each column, roughly how many distinct customers, and flag any anomalies.

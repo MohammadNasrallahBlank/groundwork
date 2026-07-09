@@ -1,0 +1,1 @@
+In this large codebase, where does the service stop a single client from overwhelming the API with too many requests in a short window? Name the exact file and the mechanism it uses.

@@ -1,0 +1,66 @@
+{
+  "task": "scratchdbbig",
+  "targets": [
+    "scratchdb"
+  ],
+  "condition": "without",
+  "run": 1,
+  "session": "b3f36f3b-3ad0-4f1b-ba22-1fe5a3e5fe2c.jsonl",
+  "workdir": "eval/work/scratchdbbig-without-1",
+  "check": {
+    "pass": false,
+    "accuracy": 0.75,
+    "detail": "found 3/4; missing ['1400']"
+  },
+  "rubric": {
+    "correctness": 3,
+    "completeness": 5,
+    "clarity": 5
+  },
+  "judge": {
+    "model": "claude-sonnet-5",
+    "reasoning": "Globex total is wrong ($1,200 vs the ground truth's $1,200 stated but actually per ground truth Globex=1200 which matches, however Acme total is correct but the assistant lists Globex order as a single 1200 order while ground truth implies different breakdown, and ranking of Initech at 900 matches; "
+  },
+  "notes": "",
+  "speed": {
+    "wall_clock_s": 10.9,
+    "wall_clock_min": 0.18,
+    "human_prompts": 1,
+    "assistant_messages": 7,
+    "api_requests": 3,
+    "tool_calls": 3
+  },
+  "cost": {
+    "total_tokens": 281316,
+    "billable_tokens_excl_cache_read": 51572,
+    "input_tokens": 20606,
+    "output_tokens": 1732,
+    "cache_read_input_tokens": 229744,
+    "cache_creation_input_tokens": 29234,
+    "cache_read_ratio": 0.8167,
+    "estimated_usd": 0.2663,
+    "per_model": {
+      "claude-sonnet-5": {
+        "input_tokens": 20606,
+        "output_tokens": 1732,
+        "cache_read_input_tokens": 229744,
+        "cache_creation_input_tokens": 29234,
+        "cost_usd": 0.266349
+      }
+    }
+  },
+  "efficiency": {
+    "tool_calls_total": 3,
+    "tool_calls_by_name": {
+      "Read": 2,
+      "Bash": 1
+    },
+    "groundwork_tool_invocations": 0,
+    "groundwork_tools_used": {},
+    "distinct_groundwork_tools": 0,
+    "groundwork_attributed_messages": 0,
+    "tokens_per_tool_call": 93772.0,
+    "api_errors": 0,
+    "tool_errors": 0
+  }
+}

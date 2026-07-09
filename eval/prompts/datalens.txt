@@ -1,0 +1,1 @@
+Profile data.csv for me: how many data rows and how many columns, the column names, and flag any nulls / missing values or obvious anomalies.

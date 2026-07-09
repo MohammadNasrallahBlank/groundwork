@@ -1,0 +1,1 @@
+Why was the `apply_discount` function last changed in this repo? Cite the commit and the reason.

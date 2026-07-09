@@ -1,0 +1,1 @@
+In chart.png, how wide is the blue bar in pixels? Give a single number.

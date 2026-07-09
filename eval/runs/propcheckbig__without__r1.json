@@ -1,0 +1,67 @@
+{
+  "task": "propcheckbig",
+  "targets": [
+    "propcheck"
+  ],
+  "condition": "without",
+  "run": 1,
+  "session": "84bc8ebe-0258-4acc-84d9-28c508dbd3ff.jsonl",
+  "workdir": "eval/work/propcheckbig-without-1",
+  "check": {
+    "pass": true,
+    "accuracy": 1.0,
+    "detail": "found 2/2; missing []"
+  },
+  "rubric": {
+    "correctness": 5,
+    "completeness": 5,
+    "clarity": 5
+  },
+  "judge": {
+    "model": "claude-sonnet-5",
+    "reasoning": "The assistant correctly identifies the strict '<' bug and gives a valid touching-interval counterexample ([1,3],[3,5] \u2192 should merge to [1,5]) consistent with the ground truth's described bug pattern."
+  },
+  "notes": "",
+  "speed": {
+    "wall_clock_s": 16.2,
+    "wall_clock_min": 0.27,
+    "human_prompts": 1,
+    "assistant_messages": 7,
+    "api_requests": 4,
+    "tool_calls": 3
+  },
+  "cost": {
+    "total_tokens": 285331,
+    "billable_tokens_excl_cache_read": 47246,
+    "input_tokens": 20606,
+    "output_tokens": 1789,
+    "cache_read_input_tokens": 238085,
+    "cache_creation_input_tokens": 24851,
+    "cache_read_ratio": 0.8344,
+    "estimated_usd": 0.2533,
+    "per_model": {
+      "claude-sonnet-5": {
+        "input_tokens": 20606,
+        "output_tokens": 1789,
+        "cache_read_input_tokens": 238085,
+        "cache_creation_input_tokens": 24851,
+        "cost_usd": 0.25327
+      }
+    }
+  },
+  "efficiency": {
+    "tool_calls_total": 3,
+    "tool_calls_by_name": {
+      "Grep": 1,
+      "Bash": 1,
+      "Read": 1
+    },
+    "groundwork_tool_invocations": 0,
+    "groundwork_tools_used": {},
+    "distinct_groundwork_tools": 0,
+    "groundwork_attributed_messages": 0,
+    "tokens_per_tool_call": 95110.3,
+    "api_errors": 0,
+    "tool_errors": 0
+  }
+}

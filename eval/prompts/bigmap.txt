@@ -1,0 +1,1 @@
+This is a large codebase I've never seen (~80 files). Map its architecture for me: the major layers/components, and specifically which 3 modules are the most depended-upon (most central) across the whole codebase.

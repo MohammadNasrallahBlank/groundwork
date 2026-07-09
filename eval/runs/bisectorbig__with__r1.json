@@ -1,0 +1,69 @@
+{
+  "task": "bisectorbig",
+  "targets": [
+    "bisector"
+  ],
+  "condition": "with",
+  "run": 1,
+  "session": "4051530f-f526-464c-9f30-b3d22e80d15c.jsonl",
+  "workdir": "eval/work/bisectorbig-with-1",
+  "check": {
+    "pass": true,
+    "accuracy": 1.0,
+    "detail": "found 2/2; missing []"
+  },
+  "rubric": {
+    "correctness": 5,
+    "completeness": 5,
+    "clarity": 5
+  },
+  "judge": {
+    "model": "claude-sonnet-5",
+    "reasoning": "Matches ground truth exactly: commit 'work item 4' (53c440e) changed the upper bound from x <= hi to x < hi, causing in_range(10,0,10) to flip from True to False."
+  },
+  "notes": "",
+  "speed": {
+    "wall_clock_s": 64.9,
+    "wall_clock_min": 1.08,
+    "human_prompts": 1,
+    "assistant_messages": 21,
+    "api_requests": 9,
+    "tool_calls": 10
+  },
+  "cost": {
+    "total_tokens": 1071914,
+    "billable_tokens_excl_cache_read": 134841,
+    "input_tokens": 30076,
+    "output_tokens": 8125,
+    "cache_read_input_tokens": 937073,
+    "cache_creation_input_tokens": 96640,
+    "cache_read_ratio": 0.8742,
+    "estimated_usd": 0.8556,
+    "per_model": {
+      "claude-sonnet-5": {
+        "input_tokens": 30076,
+        "output_tokens": 8125,
+        "cache_read_input_tokens": 937073,
+        "cache_creation_input_tokens": 96640,
+        "cost_usd": 0.855625
+      }
+    }
+  },
+  "efficiency": {
+    "tool_calls_total": 10,
+    "tool_calls_by_name": {
+      "Bash": 7,
+      "Read": 2,
+      "Skill": 1
+    },
+    "groundwork_tool_invocations": 1,
+    "groundwork_tools_used": {
+      "bisector": 1
+    },
+    "distinct_groundwork_tools": 1,
+    "groundwork_attributed_messages": 18,
+    "tokens_per_tool_call": 107191.4,
+    "api_errors": 0,
+    "tool_errors": 0
+  }
+}

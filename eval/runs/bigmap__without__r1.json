@@ -1,0 +1,66 @@
+{
+  "task": "bigmap",
+  "targets": [
+    "cartographer"
+  ],
+  "condition": "without",
+  "run": 1,
+  "session": "7505c9d6-a1fb-4d6d-be8d-81bf042414f2.jsonl",
+  "workdir": "eval/work/bigmap-without-1",
+  "check": {
+    "pass": true,
+    "accuracy": 1.0,
+    "detail": "found 5/5; missing []"
+  },
+  "rubric": {
+    "correctness": 3,
+    "completeness": 5,
+    "clarity": 5
+  },
+  "judge": {
+    "model": "claude-sonnet-5",
+    "reasoning": "The answer correctly identifies core/exceptions.py as #1, but ranks core/config.py as #2 above utils/validation.py and db/base.py (relegated to a 4-way tie for 3rd along with events.py and throttle.py), whereas the ground truth explicitly names validation.py and db/base.py as 2 of the 3 most central"
+  },
+  "notes": "",
+  "speed": {
+    "wall_clock_s": 49.3,
+    "wall_clock_min": 0.82,
+    "human_prompts": 1,
+    "assistant_messages": 13,
+    "api_requests": 7,
+    "tool_calls": 6
+  },
+  "cost": {
+    "total_tokens": 609246,
+    "billable_tokens_excl_cache_read": 74524,
+    "input_tokens": 20616,
+    "output_tokens": 7168,
+    "cache_read_input_tokens": 534722,
+    "cache_creation_input_tokens": 46740,
+    "cache_read_ratio": 0.8777,
+    "estimated_usd": 0.5051,
+    "per_model": {
+      "claude-sonnet-5": {
+        "input_tokens": 20616,
+        "output_tokens": 7168,
+        "cache_read_input_tokens": 534722,
+        "cache_creation_input_tokens": 46740,
+        "cost_usd": 0.50506
+      }
+    }
+  },
+  "efficiency": {
+    "tool_calls_total": 6,
+    "tool_calls_by_name": {
+      "Bash": 4,
+      "Read": 2
+    },
+    "groundwork_tool_invocations": 0,
+    "groundwork_tools_used": {},
+    "distinct_groundwork_tools": 0,
+    "groundwork_attributed_messages": 0,
+    "tokens_per_tool_call": 101541.0,
+    "api_errors": 0,
+    "tool_errors": 0
+  }
+}

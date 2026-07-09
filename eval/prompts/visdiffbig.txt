@@ -1,0 +1,1 @@
+Compare before.html and after.html. Did the UI change, and if so what changed visually? Be specific.

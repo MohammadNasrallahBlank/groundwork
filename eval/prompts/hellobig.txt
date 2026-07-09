@@ -1,0 +1,1 @@
+Is the local Groundwork toolchain installed and healthy on this machine? Confirm the tools are available and their self-tests pass.

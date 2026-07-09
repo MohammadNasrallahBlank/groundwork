@@ -1,0 +1,69 @@
+{
+  "task": "imgmeasurebig",
+  "targets": [
+    "imgmeasure"
+  ],
+  "condition": "with",
+  "run": 1,
+  "session": "2007b9f6-0d6a-4975-8579-82278cd3a50a.jsonl",
+  "workdir": "eval/work/imgmeasurebig-with-1",
+  "check": {
+    "pass": true,
+    "accuracy": 1.0,
+    "detail": "pattern matched"
+  },
+  "rubric": {
+    "correctness": 5,
+    "completeness": 5,
+    "clarity": 5
+  },
+  "judge": {
+    "model": "claude-sonnet-5",
+    "reasoning": "Matches ground truth exactly (180 pixels, x:20\u2192200) with supporting justification."
+  },
+  "notes": "",
+  "speed": {
+    "wall_clock_s": 144.0,
+    "wall_clock_min": 2.4,
+    "human_prompts": 1,
+    "assistant_messages": 12,
+    "api_requests": 6,
+    "tool_calls": 5
+  },
+  "cost": {
+    "total_tokens": 590848,
+    "billable_tokens_excl_cache_read": 71218,
+    "input_tokens": 21576,
+    "output_tokens": 2408,
+    "cache_read_input_tokens": 519630,
+    "cache_creation_input_tokens": 47234,
+    "cache_read_ratio": 0.8795,
+    "estimated_usd": 0.4339,
+    "per_model": {
+      "claude-sonnet-5": {
+        "input_tokens": 21576,
+        "output_tokens": 2408,
+        "cache_read_input_tokens": 519630,
+        "cache_creation_input_tokens": 47234,
+        "cost_usd": 0.433864
+      }
+    }
+  },
+  "efficiency": {
+    "tool_calls_total": 5,
+    "tool_calls_by_name": {
+      "Bash": 3,
+      "Skill": 1,
+      "Read": 1
+    },
+    "groundwork_tool_invocations": 1,
+    "groundwork_tools_used": {
+      "imgmeasure": 1
+    },
+    "distinct_groundwork_tools": 1,
+    "groundwork_attributed_messages": 10,
+    "tokens_per_tool_call": 118169.6,
+    "api_errors": 0,
+    "tool_errors": 0
+  }
+}

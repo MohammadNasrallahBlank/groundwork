@@ -1,0 +1,1 @@
+Run the tests in this project. If anything fails, find and fix the underlying bug so the whole suite passes. Don't just delete the test.

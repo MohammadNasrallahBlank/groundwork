@@ -1,0 +1,1 @@
+What exactly does snippet.py print when run? Give the precise output.

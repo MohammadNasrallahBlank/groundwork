@@ -1,0 +1,1 @@
+Rename the function `require` (defined in utils/validation.py and called by every domain's model.py) to `ensure`, everywhere across this project - the definition, all imports, and all call sites - so nothing breaks.
